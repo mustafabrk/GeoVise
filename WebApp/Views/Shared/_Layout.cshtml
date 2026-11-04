@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApp</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/jsPanel/jspanel.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.css">
+    <link href="https://unpkg.com/bootstrap-table@1.21.3/dist/extensions/reorder-rows/bootstrap-table-reorder-rows.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/lib/ol/ol.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/app-theme.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">GeoVise</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#" name="list-data" data-action="get-list"><i class="fas fa-table-list"></i> Listele</a>
+                    <a class="nav-link" href="#" name="get-info" data-action="select-map" data-info-active="false"><i class="fas fa-map-location-dot"></i> Seç</a>
+                    <a class="nav-link" href="#" name="coordinate-entry" data-action="enter-coordinate"><i class="fas fa-location-crosshairs"></i> Koordinat Gir</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="çiz">
+                            <i class="fas fa-paintbrush"></i> Çizim Araçları
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="drop-down-menu" data-toggle="">
+                            <li><a class="dropdown-item" name="city-brush" data-action="draw-city"><i class="fas fa-mountain-city"></i> İl</a></li>
+                            <li><a class="dropdown-item" name="county-brush" data-action="draw-county"><i class="fas fa-tree-city"></i> İlçe</a></li>
+                            <li><a class="dropdown-item" name="neighborhood-brush" data-action="draw-neighborhood"><i class="fas fa-school-flag"></i> Mahalle</a></li>
+                            <li><a class="dropdown-item" name="street-brush" data-action="draw-street"><i class="fas fa-road"></i> Sokak</a></li>
+                            <li><a class="dropdown-item" name="building-brush" data-action="draw-building"><i class="fas fa-building"></i> Bina</a></li>
+                            <li><a class="dropdown-item" name="transformer-brush" data-action="draw-transformer"><i class="fas fa-car-battery"></i> Trafo</a></li>
+                            <li><a class="dropdown-item" name="straight-brush" data-action="draw-straight"><i class="fas fa-tower-cell"></i> Direk</a></li>
+                            <li><a class="dropdown-item" name="subscriber-brush" data-action="draw-subscriber"><i class="fas fa-person"></i> Abone</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Ölç">
+                            <i class="fas fa-ruler"></i> Ölçüm Araçları
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="drop-down-menu" data-toggle="">
+                            <li><a class="dropdown-item" name="measure-tool-line" value="length" data-action="measure-line">Uzunluk</a></li>
+                            <li><a class="dropdown-item" name="measure-tool-polygon" value="area" data-action="measure-polygon">Alan</a></li>
+                            <li><a class="dropdown-item" name="get-distance" data-distance-active="false" data-action="get-distance"><i class="fas fa-map-pin"></i> Ölçümleri Kontrol Et</a></li>
+                        </ul>
+                    </li>
+
+                    <a class="nav-link" href="#" name="change-opacity" data-action="change-layer-opacity" title="Katman Ayarları" aria-label="Katman opaklığı"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Katman Ayarları</a>
+
+                    <label class="nav-link btn" for="input-file-selector" title="Dosya Ekle">
+                        <input class="nav-link visually-hidden" type="file" id="input-file-selector" data-action="file-selector" accept=".kml">
+                        <i class="fa-solid fa-folder-plus"></i>
+                         Dosya Ekle
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="bg-dark">
+
+        </div>
+
+        <form class="d-flex ms-auto me-3" name="search-area">
+            <input id="inp-search" name="input-searchable" class="form-control me-2" type="text" placeholder="İsim & Numara" aria-label="Ara">
+            <button id="but-search" class="btn btn-outline-success" type="button" title="Ara" aria-label="Ara"><i class="fas fa-search" aria-hidden="true"></i></button>
+        </form>
+    </nav>
+
+    <div class="map">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/ol/ol.js"></script>
+    <script src="~/lib/jsPanel/jspanel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tablednd@1.0.5/dist/jquery.tablednd.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.3/dist/extensions/reorder-rows/bootstrap-table-reorder-rows.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

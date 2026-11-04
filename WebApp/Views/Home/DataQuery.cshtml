@@ -1,0 +1,157 @@
+﻿<form id="data-query">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="form-default row" id="number-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Numara</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="street-number" id="query-num" />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="name-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>İsim</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="street-name" id="query-str" />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="city-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>İl</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="located-city" id="query-cty" />
+                    </div>
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+                <div class="form-prefer row" id="county-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>İlçe</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="located-county" id="query-cou" />
+                    </div>
+                </div>
+                    
+                <div class="form-prefer row" id="neighborhood-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Mahalle</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="located-neighborhood" id="query-nei" />
+                    </div>
+                </div>
+
+                <div class="form-prefer row" id="capacity-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Kapasite</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="capacity" id="query-cap" />
+                    </div>
+                </div>
+                <div class="form-prefer row" id="straight-type-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Direk Tipi</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="straight-type" id="query-stra-type" />
+                    </div>
+                </div>
+
+                <div class="form-prefer row" id="license-plate-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Plaka Kodu</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="license-plate" id="query-lic-pla" />
+                    </div>
+                </div>
+
+                <div class="form-prefer row" id="population-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Nüfus Bilgisi</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="population" id="query-pop" />
+                    </div>
+                </div>
+
+                <div class="form-prefer row" id="building-no-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Bina No</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="building-no" id="query-bui" />
+                    </div>
+                </div>
+
+                <div class="form-prefer row" id="floor-num-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Kapı No</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="floor-num" id="query-flr-num" />
+                    </div>
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+                <div class="form-default row" id="id-div">
+                    <div class="col-md-3 col-sm-12">
+                        <label>Id</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="id" readonly />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="measurement-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Ölçüm</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <textarea type="text" class="form-control" name="measurement" readonly></textarea>
+                    </div>
+                </div>
+
+                <div class="form-default row" id="coordinate-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Koordinatlar</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <textarea type="text" rows="5" class="form-control" name="coordinate" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-success get-info" id="upfl" title="Güncelle"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-danger delete-record" id="delfl" title="Sil"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-warning undo-change" id="cancel" title="Değişiklikleri İptal Et"><i class="fa fa-reply" aria-hidden="true"></i></button>
+            </div>
+            <div class="btn-group buttonDiv" aria-label="Basic example">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" name="draw-type">
+                Tür
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="query-dropdown" name="query-dropdown" data-toggle="">
+                    <li><a class="dropdown-item" name="city-brush" data-action="draw-city"><i class="fas fa-mountain-city"></i> İl</a></li>
+                    <li><a class="dropdown-item" name="county-brush" data-action="draw-county"><i class="fas fa-tree-city"></i> İlçe</a></li>
+                    <li><a class="dropdown-item" name="neighborhood-brush" data-action="draw-neighborhood"><i class="fas fa-school-flag"></i> Mahalle</a></li>
+                    <li><a class="dropdown-item" name="street-brush" data-action="draw-street"><i class="fas fa-road"></i> Sokak</a></li>
+                    <li><a class="dropdown-item" name="building-brush" data-action="draw-building"><i class="fas fa-building"></i> Bina</a></li>
+                    <li><a class="dropdown-item" name="transformer-brush" data-action="draw-transformer"><i class="fas fa-car-battery"></i> Trafo</a></li>
+                    <li><a class="dropdown-item" name="straight-brush" data-action="draw-straight"><i class="fas fa-tower-cell"></i> Direk</a></li>
+                    <li><a class="dropdown-item" name="subscriber-brush" data-action="draw-subscriber"><i class="fas fa-person"></i> Abone</a></li>
+                </ul>
+                <button type="button" class="btn btn-outline-primary modify-object" id="modify" name="modify-button" title="Düzenle" data-modify-active="false"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-info view-object" id="view" title="Bak"><i class="fa fa-eye" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</form>

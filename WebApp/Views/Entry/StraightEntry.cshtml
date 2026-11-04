@@ -1,0 +1,46 @@
+﻿<form id="data-entry">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="input">
+
+                <div class="col-md-3  col-sm-12">
+                    <label>Numara Girin</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="number" class="form-control" name="num" id="num" />
+                </div>
+
+                <div class="col-md-3  col-sm-12">
+                    <label>İsim Girin</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="text" class="form-control" name="str" id="str" />
+                </div>
+
+                <div class="col-md-3  col-sm-12">
+                    <label>İl Girin</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="text" class="form-control" name="located-city" id="query-cty" />
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+                <div class="col-md-3  col-sm-12">
+                    <label>Direk Tipi</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="text" class="form-control" name="straight-type" id="query-stra-type" />
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+            </div>
+
+            <hr />
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-success save-data" id="svfl" title="Kaydet" data-entry-save-active="false"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <button type="reset" class="btn btn-outline-warning undo-change" id="cncl" title="Değişiklikleri İptal Et"><i class="fa fa-reply" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-primary view-object" id="view" title="Bak"><i class="fa fa-eye" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</form>

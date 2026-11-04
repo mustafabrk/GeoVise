@@ -1,0 +1,54 @@
+﻿<form id="coordinate-entry" class="my-form">
+    <div class="card">
+        <div class="form-group row">
+            <label for="coordinate-entry-input" class="col-md-3 col-sm-12 col-form-label">WKT</label>
+            <div class="col-md-9 col-sm-12">
+                <input class="form-control enter-coordinate" name="coordinate-entry-input" type="text" placeholder="Koordinat Girin">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="projection-dropdown" class="col-md-3 col-sm-12 col-form-label">Projeksiyon</label>
+            <div class="col-md-9 col-sm-12">
+                <div class="dropdown">
+                    <a class="dropdown-toggle form-control" name="projection-dropdown" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" data-bs-display="dynamic" aria-expanded="false">
+                        Projeksiyon
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" id="drop-down-menu">
+                        <li><a class="dropdown-item" name="first-projection" data-action="first-proj">EPSG:4326</a></li>
+                        <li><a class="dropdown-item" name="second-projection" data-action="second-proj">EPSG:3857</a></li>
+                        <li><a class="dropdown-item" name="usa-projection" data-action="usa-proj">EPSG:4269 (USA)</a></li>
+                        <li><a class="dropdown-item" name="tr-projection" data-action="tr-proj">EPSG:2320 (TR)</a></li>
+                        <li><a class="dropdown-item" name="eu-projection" data-action="eu-proj">EPSG:4258 (EU)</a></li>
+                        <li><a class="dropdown-item" name="jp-projection" data-action="jp-proj">EPSG:6684 (JP)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="type-dropdown" class="col-md-3 col-sm-12 col-form-label">Tür</label>
+            <div class="col-md-9 col-sm-12">
+                <div class="dropdown">
+                    <a class="dropdown-toggle form-control" name="type-dropdown" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" data-bs-display="dynamic" aria-expanded="false">
+                        <span>Tür</span>
+                        <span class="dropdown-caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" id="drop-down-menu">
+                        <li><a class="dropdown-item" name="city-brush" data-action="draw-city"><i class="fas fa-mountain-city"></i> İl</a></li>
+                        <li><a class="dropdown-item" name="county-brush" data-action="draw-county"><i class="fas fa-tree-city"></i> İlçe</a></li>
+                        <li><a class="dropdown-item" name="neighborhood-brush" data-action="draw-neighborhood"><i class="fas fa-school-flag"></i> Mahalle</a></li>
+                        <li><a class="dropdown-item" name="street-brush" data-action="draw-street"><i class="fas fa-road"></i> Sokak</a></li>
+                        <li><a class="dropdown-item" name="building-brush" data-action="draw-building"><i class="fas fa-building"></i> Bina</a></li>
+                        <li><a class="dropdown-item" name="transformer-brush" data-action="draw-transformer"><i class="fas fa-car-battery"></i> Trafo</a></li>
+                        <li><a class="dropdown-item" name="straight-brush" data-action="draw-straight"><i class="fas fa-tower-cell"></i> Direk</a></li>
+                        <li><a class="dropdown-item" name="subscriber-brush" data-action="draw-subscriber"><i class="fas fa-person"></i> Abone</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-primary link" href="#" name="okey" data-action="OK">OK</a>
+
+    </div>
+</form>

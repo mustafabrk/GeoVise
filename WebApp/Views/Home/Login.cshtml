@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Geovise - Giriş Ekranı";
+    Layout = "~/Views/Shared/_LayoutForAdmin.cshtml";
+}
+
+<main class="login-page">
+    <section class="login-card" aria-label="GeoVise giriş">
+        <div class="login-intro">
+            <div class="login-brand">
+                <span class="login-brand-mark" aria-hidden="true">
+                    <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span>GeoVise</span>
+            </div>
+
+            <div class="login-intro-copy">
+                <div class="login-eyebrow">Konumun gücü</div>
+                <h1>Haritanız, yeni bir bakış açısı.</h1>
+                <p>GeoVise hesabınızla harita deneyiminize güvenle devam edin.</p>
+            </div>
+
+            <div class="login-intro-foot">GeoVise · Harita ve konum platformu</div>
+        </div>
+
+        <div class="login-form-panel">
+            <h2>Tekrar hoş geldiniz</h2>
+            <p class="login-subtitle">Devam etmek için hesap bilgilerinizle giriş yapın.</p>
+
+            <form>
+                <div class="login-field">
+                    <label for="username">Kullanıcı adı</label>
+                    <div class="login-input-wrap">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <input type="text"
+                               class="login-input"
+                               id="username"
+                               name="username"
+                               placeholder="Kullanıcı adınızı girin"
+                               autocomplete="username"
+                               required>
+                    </div>
+                </div>
+
+                <div class="login-field">
+                    <label for="password">Şifre</label>
+                    <div class="login-input-wrap">
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        <input type="password"
+                               class="login-input"
+                               id="password"
+                               name="password"
+                               placeholder="Şifrenizi girin"
+                               autocomplete="current-password"
+                               required>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-submit" name="enter-btn">
+                    <span>Giriş yap</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    </section>
+</main>

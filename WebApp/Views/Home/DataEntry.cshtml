@@ -1,0 +1,119 @@
+﻿<form id="data-entry">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="input">
+
+                <div class="col-md-3  col-sm-12">
+                    <label>Numara Girin</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="number" class="form-control" name="num" id="num" />
+                </div>
+
+                <div class="col-md-3  col-sm-12">
+                    <label>İsim Girin</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="text" class="form-control" name="str" id="str" />
+                </div>
+
+                <div class="col-md-3  col-sm-12">
+                    <label>İl Girin</label>
+                </div>
+                <div class="col-md-9  col-sm-12">
+                    <input type="text" class="form-control" name="located-city" id="query-cty" />
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+                <div class="form-prefer" id="county-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>İlçe</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="located-county" id="query-cou" />
+                    </div>
+                </div>
+
+                <div class="form-prefer" id="neighborhood-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Mahalle</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="located-neighborhood" id="query-nei" />
+                    </div>
+                </div>
+
+                <div class="form-prefer" id="capacity-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Kapasite</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="capacity" id="query-cap" />
+                    </div>
+                </div>
+                <div class="form-prefer" id="straight-type-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Direk Tipi</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="straight-type" id="query-stra-type" />
+                    </div>
+                </div>
+
+                <div class="form-prefer" id="license-plate-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Plaka Kodu</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="license-plate" id="query-lic-pla" />
+                    </div>
+                </div>
+
+                <div class="form-prefer" id="population-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Nüfus Bilgisi</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="population" id="query-pop" />
+                    </div>
+                </div>
+
+                <div class="form-prefer" id="building-no-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Bina No</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="building-no" id="query-bui" />
+                    </div>
+                </div>
+
+                <div class="form-prefer" id="floor-num-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Kapı No</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="floor-num" id="query-flr-num" />
+                    </div>
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+            </div>
+
+            <hr />
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-success save-data" id="svfl" title="Kaydet" data-entry-save-active="false"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <button type="reset" class="btn btn-outline-warning undo-change" id="cncl" title="Değişiklikleri İptal Et"><i class="fa fa-reply" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-primary view-object" id="view" title="Bak"><i class="fa fa-eye" aria-hidden="true"></i></button>
+@*                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" name="draw-type">
+                    Çizim Türü
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="entry-dropdown" name="entry-dropdown" data-toggle="">
+                    <li><a class="dropdown-item" name="type-city" data-action="set-city">İl</a></li>
+                    <li><a class="dropdown-item" name="type-county" data-action="set-county">İlçe</a></li>
+                    <li><a class="dropdown-item" name="type-neighborhood" data-action="set-neighborhood">Mahalle</a></li>
+                    <li><a class="dropdown-item" name="type-street" data-action="set-street">Sokak</a></li>
+                </ul>*@
+            </div>
+        </div>
+    </div>
+</form>

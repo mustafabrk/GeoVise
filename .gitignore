@@ -1,0 +1,20 @@
+.vs/
+.vscode/
+**/bin/
+**/obj/
+**/TestResults/
+*.user
+*.suo
+*.cache
+*.log
+
+# Local configuration and secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.Secrets.json
+**/.env
+**/.env.*
+!**/.env.example
+**/secrets.json
+**/*secrets*.json
+**/dev-seed*

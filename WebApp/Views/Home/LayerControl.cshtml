@@ -1,0 +1,51 @@
+﻿@using ModelClass.Models;
+@model List<Layers>
+
+<script>
+    var userLayers = @Html.Raw(Json.Serialize(Model));
+</script>
+
+<div class="d-flex justify-content-between layer-panel-heading">
+    <h2 class="text-start layer-panel-title">Katmanlar</h2>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary sort-data" id="sort-layers" title="Sırala" aria-label="Katmanları sırala"><i class="fa-solid fa-bars-staggered" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-success save-data" id="save-layer-changes" title="Kaydet" aria-label="Katman değişikliklerini kaydet" data-entry-save-active="false"><i class="fa fa-check" aria-hidden="true"></i></button>
+    </div>
+</div>
+<div class="layer-panel-spacer"></div>
+
+<div class="accordion" id="accordionPanels">
+    @foreach (var group in Model.GroupBy(x => x.Group))
+    {
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading@(group.Key)">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse@(group.Key)" aria-controls="panelsStayOpen-collapse@(group.Key)">
+                    @(group.Key)
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse@(group.Key)" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading@(group.Key)">
+                <div class="accordion-body">
+                    @foreach (var item in group)
+                    {
+                        <div class="form-check form-switch draggable">
+                            <input class="form-check-input" type="checkbox" role="switch" id="@($"{item.Tag}-switch")"
+                                   data-layerid="@($"{item.Id}")" data-priority="@($"{item.Priority}")"
+                                   data-minzoom="@($"{item.MinZoom}")" data-maxzoom="@($"{item.MaxZoom}")" data-layer="@($"{item.Layer}")" data-group="@($"{item.Group}")"
+                                   data-isopen="@($"{item.IsOpen}")" data-tag="@($"{item.Tag}")" data-userid="@($"{item.UserId}")" data-layerid="@($"{item.LayerId}")"
+                            @(item.IsOpen == true ? "checked" : "")>
+                            <label class="form-check-label" for="@($"{item.Tag}-switch")">@item.Tag</label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="d-flex flex-wrap justify-content-between base-map-cards">
+    <div class="card mb-3 base-map-card">
+        <div class="card-body">
+            <p class="card-title">OpenStreetMap</p>
+        </div>
+    </div>
+</div>

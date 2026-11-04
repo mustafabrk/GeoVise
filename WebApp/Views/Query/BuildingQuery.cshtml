@@ -1,0 +1,91 @@
+﻿<form id="data-query">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="form-default row" id="number-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Numara</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="street-number" id="query-num" />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="name-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>İsim</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="street-name" id="query-str" />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="city-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>İl</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="located-city" id="query-cty" />
+                    </div>
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+                <div class="form-default row" id="bulding-no-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Bina No</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="building-no" id="query-bui" />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="door-number-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Kapı No</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="number" class="form-control" name="floor-num" id="query-flr-num" />
+                    </div>
+                </div>
+                @*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+                <div class="form-default row" id="id-div">
+                    <div class="col-md-3 col-sm-12">
+                        <label>Id</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <input type="text" class="form-control" name="id" readonly />
+                    </div>
+                </div>
+
+                <div class="form-default row" id="measurement-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Ölçüm</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <textarea type="text" class="form-control" name="measurement" readonly></textarea>
+                    </div>
+                </div>
+
+                <div class="form-default row" id="coordinate-div">
+                    <div class="col-md-3  col-sm-12">
+                        <label>Koordinatlar</label>
+                    </div>
+                    <div class="col-md-9  col-sm-12">
+                        <textarea type="text" rows="5" class="form-control" name="coordinate" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-success get-info" id="upfl" title="Güncelle"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-danger delete-record" id="delfl" title="Sil"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-warning undo-change" id="cancel" title="Değişiklikleri İptal Et"><i class="fa fa-reply" aria-hidden="true"></i></button>
+            </div>
+            <div class="btn-group buttonDiv" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-primary modify-object" id="modify" name="modify-button" title="Düzenle" data-modify-active="false"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-info view-object" id="view" title="Bak"><i class="fa fa-eye" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</form>
